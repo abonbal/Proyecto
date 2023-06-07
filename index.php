@@ -42,6 +42,9 @@
 					
 			</tbody>
         </table>
+        <a href="añadir.php">Añadir equipo</a>
+        <a href="eliminar.php">eliminar equipo</a>
+        <a href="editar.php">editar equipo</a>
         
     <footer>
         <p>@2023 Liga Santander. Todos los derechos reservados.</p>
