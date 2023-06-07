@@ -1,11 +1,10 @@
 <?php
-  //estableciendo conexion
+  
   require 'conexion.php';
 
-  //preparo la sentencia sql
+  
   $sql = "SELECT * FROM equipos order by Puntos DESC";
 
-  //ejeutando la sentencia y guardando el resultado
   $resultado = $mysqli->query($sql);
 	
 ?>
@@ -35,6 +34,7 @@
 								<td><?php echo $fila['Puntos'];?></td>					
 						<td><a href="Jugadores.php?id=<?php echo $fila["id_equipo"];?>"class="btn btn-danger">Jugadores</a></td>
                         <td><a href="Estadio.php?id=<?php echo $fila["id_equipo"];?>"class="btn btn-danger">Estadios</a></td>
+                        <td><a href="Entrenadores.php?id=<?php echo $fila["id_equipo"];?>"class="btn btn-danger">Entrenadores</a></td>
 							</tr>
 						<?php
 						}
