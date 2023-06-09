@@ -16,12 +16,12 @@
 <html>
 <head>
     <title>Jugadores</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            padding: 20px;
+            margin: 20px;
         }
 
         header {
@@ -39,59 +39,30 @@
 
         table {
             width: 100%;
+            border-collapse: collapse;
         }
 
         th, td {
-            padding: 10px;
+            padding: 8px;
             text-align: left;
+            border-bottom: 1px solid #ddd;
         }
 
-        thead {
-            background-color: #f9f9f9;
+        tbody tr:hover {
+            background-color: #f5f5f5;
         }
 
-        tbody tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        a.btn {
-            margin-right: 5px;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
-
-        .btn-primary:hover {
-            background-color: #0069d9;
-            border-color: #0062cc;
-        }
-
-        .btn-primary:focus, .btn-primary.focus {
-            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
-        }
-
-        .btn-danger {
-            background-color: #dc3545;
-            border-color: #dc3545;
-        }
-
-        .btn-danger:hover {
-            background-color: #c82333;
-            border-color: #bd2130;
-        }
-
-        .btn-danger:focus, .btn-danger.focus {
-            box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
+        .btn {
+            display: inline-block;
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Jugadores</h1>
-    </header>
     <div class="container">
+        <header>
+            <h1>Jugadores</h1>
+        </header>
         <h2>Jugadores del equipo</h2>
         <table class="table">
             <thead>
@@ -102,28 +73,23 @@
                 </tr>
             </thead>
             <tbody>
-                <?php while ($fila = $resultado->fetch_assoc()): ?>
+                <?php
+                while ($fila = $resultado->fetch_assoc()) {
+                    ?>
                     <tr>
                         <td><?php echo $fila['Nombre']; ?></td>
                         <td><?php echo $fila['Numero']; ?></td>
                         <td>
-                            <a href="eliminarjug.php?id=<?php echo $fila['id']; ?>" class="btn btn-danger">Eliminar Jugador</a>
+                            <a href="eliminarjug.php?id='<?php echo $fila['id'];?>'" class="btn btn-danger">Eliminar Jugador</a>
                         </td>
                     </tr>
-                <?php endwhile; ?>
+                    <?php
+                }
+                ?>
             </tbody>
         </table>
         <a href="index.php" class="btn btn-primary">Volver a la clasificación</a>
-        <a href="añadirjug1.php?id_equipo=<?php echo $id_equipo; ?>" class="btn btn-primary">Añadir Jugador</a>
+        <a href="añadirjug1.php?id_equipo=<?php echo $id; ?>" class="btn btn-success">Añadir Jugador</a>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.table').DataTable();
-        });
-    </script>
 </body>
 </html>

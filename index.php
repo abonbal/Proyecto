@@ -27,10 +27,20 @@
 
         h1 {
             margin: 0;
+            font-size: 36px;
+            font-weight: bold;
+            color: #FF0000; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         h2 {
             margin-bottom: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            color: #FF0000; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         table {

@@ -20,7 +20,7 @@
 				 $id=$_GET["id"];
 		 
 				 //borramos los datos
-				$sql="DELETE FROM equipos where id_equipo=$id";
+				$sql="DELETE FROM jugadores where id=$id";
 		 
 				//ejecutamos la sentencia y guardamos resultado
 				$resultado = $mysqli->query($sql);			
