@@ -3,6 +3,7 @@
 <head>
     <title>Añadir jugador</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/jquery.dataTables.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;

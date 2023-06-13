@@ -15,7 +15,8 @@
 <html>
 <head>
     <title>Estadio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/jquery.dataTables.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -101,7 +102,9 @@
                 </tr>
             </thead>
             <tbody>
-                <?php while ($fila = $resultado->fetch_assoc()): ?>
+                <?php 
+                while ($fila = $resultado->fetch_assoc()){
+                ?>
                     <tr>
                         <td><?php echo $fila['Nombre']; ?></td>
                         <td><?php echo $fila['Capacidad']; ?></td>
@@ -110,15 +113,15 @@
                             <a href="eliminarest.php?id=<?php echo $fila['id']; ?>" class="btn btn-danger">Eliminar</a>
                         </td>
                     </tr>
-                <?php endwhile; ?>
+                <?php 
+                }
+                ?>
             </tbody>
         </table>
         <a href="index.php" class="btn btn-primary">Volver a la clasificación</a>
-        <a href="añadirest1.php?id_equipo=<?php echo $id_equipo; ?>" class="btn btn-primary">Añadir estadio</a>
+        <a href="añadirest1.php?id_equipo=<?php echo $id_equipo; ?>" class="btn btn-success">Añadir estadio</a>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </
 

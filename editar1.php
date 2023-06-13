@@ -8,17 +8,13 @@
    $sql = "SELECT * FROM equipos WHERE id_equipo = $id_equipo";
 
    $resultado = $mysqli->query($sql);
-   if($fila = $resultado->fetch_assoc()) {
-    $nombre=$fila["Nombre"];
-    $puntos=$fila["Puntos"];
-
-   }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Editar equipo</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/jquery.dataTables.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -68,13 +64,6 @@
     </header>
     <div class="container">
         <?php
-        // Estableciendo la conexión
-        require 'conexion.php';
-
-        // Obtener el ID del equipo seleccionado desde el parámetro de la URL
-        $id_equipo = $_GET["id"];
-
-        $sql = "SELECT * FROM equipos WHERE id_equipo = $id_equipo";
 
         $resultado = $mysqli->query($sql);
         if($fila = $resultado->fetch_assoc()) {
@@ -82,20 +71,6 @@
             $puntos = $fila["Puntos"];
         }
         
-        if (isset($_POST["Añadir"])) {
-            // Obtener los datos del formulario
-            $nombre = $_POST['nombre'];
-            $puntos = $_POST['puntos'];
-            $id_equipo = $_POST['id_equipo'];
-
-            $sql = "UPDATE equipos SET Nombre='$nombre', Puntos='$puntos' WHERE id_equipo=$id_equipo";
-
-            if ($mysqli->query($sql)){
-                echo "<p>Registro actualizado exitosamente.</p>";
-            } else {
-                echo "Error: " . $mysqli->error;
-            }
-        }
         ?>
         <form method="POST" action="editar2.php">
             <label for="nombre">Nombre:</label>
