@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <?php
 require 'conexion.php';
 
@@ -11,11 +12,13 @@ if (isset($_POST["Añadir"])) {
     $sql = "INSERT INTO jugadores (Nombre, numero, id_equipo) VALUES ('$nombre', '$numero', '$id_equipo')";
 
     if ($mysqli->query($sql)){
-        echo "<p>Registro añadido exitosamente.</p>";
+        echo '
+		<p class="alert alert-primary" role="alert">Jugador añadido</p>
+		<br>
+		<a href="index.php" class="btn btn-primary">Regresar</a>';
     } else {
         echo "Error: " . $mysqli->error;
     }
     }
 
 ?>
-<a href="index.php">Volver a clasificacion</a>

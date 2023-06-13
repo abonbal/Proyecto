@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Editar equipo</title>
+    <title>Editar Estadio</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
         body {
@@ -36,7 +36,7 @@
 </head>
 <body>
     <header>
-        <h1>Editar equipo</h1>
+        <h1>Editar estadio</h1>
     </header>
     
     <?php
@@ -45,10 +45,11 @@
 
     // Obteniendo los datos del formulario
     $nombre = $_POST["nombre"];
-    $puntos = $_POST["puntos"];
-    $id_equipo = $_POST["id_equipo"];
+    $capacidad = $_POST["capacidad"];
+    $fundado = $_POST["fundado"];
+    $id = $_POST["id"];
 
-    $sql ="UPDATE equipos SET nombre='$nombre', puntos='$puntos' WHERE id_equipo='$id_equipo'";
+    $sql ="UPDATE estadios SET nombre='$nombre', capacidad='$capacidad', fundado='$fundado' WHERE id='$id'";
 
     if ($mysqli->query($sql)) {
         echo '

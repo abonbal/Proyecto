@@ -46,14 +46,15 @@
         $sql = "INSERT INTO equipos (Nombre, Puntos) VALUES ('$nombre', '$puntos')";
 
         if ($mysqli->query($sql)){
-            echo "<p>Registro añadido exitosamente.</p>";
+            echo '
+		<p class="alert alert-primary" role="alert">Jugador añadido</p>
+		<br>
+		<a href="index.php" class="btn btn-primary">Regresar</a>';
         } else {
             echo "Error: " . $mysqli->error;
         }
     }
     ?>
-
-    <a href="index.php">Volver a la clasificacion</a>
 </body>
 </html>
 

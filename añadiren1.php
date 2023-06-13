@@ -1,7 +1,10 @@
+<?php
+$id_equipo=$_GET['id_equipo']
+?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Añadir equipo</title>
+    <title>Añadir entrenador</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
         body {
@@ -50,18 +53,19 @@
 </head>
 <body>
     <header>
-        <h1>Añadir equipo</h1>
+        <h1>Añadir entrenador</h1>
     </header>
     
-    <form method="POST" action="añadir2.php">
+    <form method="POST" action="añadiren2.php">
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" required>
         
-        <label for="puntos">Puntos:</label>
-        <input type="number" name="puntos" required min="0">
+        <label for="puntos">Temporadas:</label>
+        <input type="number" name="Temporadas" required min="0">
         
+        <input type="hidden" name="id_equipo" value="<?php echo $id_equipo; ?>">
+
         <input type="submit" value="Añadir" name="Añadir">
     </form>
 </body>
 </html>
-

@@ -20,17 +20,10 @@
 				 $id=$_GET["id"];
 		 
 				 //borramos los datos
-				$sql="DELETE FROM equipos where id_equipo=$id";
-				$sql2="DELETE FROM jugadores where id_equipo=$id";
-				$sql3="DELETE FROM entrenador where id_equipo=$id";
-				$sql4="DELETE FROM estadios where id_equipo=$id";
-				
+				$sql="DELETE FROM entrenador where id=$id";
 		 
 				//ejecutamos la sentencia y guardamos resultado
-				$resultado = $mysqli->query($sql);
-				$resultado2 = $mysqli->query($sql2);
-				$resultado3 = $mysqli->query($sql3);				
-				$resultado4 = $mysqli->query($sql4);
+				$resultado = $mysqli->query($sql);			
 		?>
 		<br>
 		<p class="alert alert-primary" role="alert">Registro eliminado</p>

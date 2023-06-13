@@ -104,7 +104,7 @@
 					
 			</tbody>
         </table>
-        <a href="añadir1.php">Añadir equipo</a>
+        <a href="añadir1.php" class="btn btn-success">Añadir equipo</a>
         
     <footer>
         <p>@2023 Liga Santander. Todos los derechos reservados.</p>

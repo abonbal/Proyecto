@@ -3,16 +3,16 @@
   require 'conexion.php';
 
   // Obtener el ID del equipo seleccionado desde el parámetro de la URL
-  $id_equipo = $_GET["id"];
+  $id = $_GET["id"];
 
-   $sql = "SELECT * FROM equipos WHERE id_equipo = $id_equipo";
+   $sql = "SELECT * FROM estadios WHERE id = $id";
 
    $resultado = $mysqli->query($sql);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Editar equipo</title>
+    <title>Editar Estadio</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/jquery.dataTables.min.css">
     <style>
@@ -60,25 +60,29 @@
 </head>
 <body>
     <header>
-        <h1>Editar equipo</h1>
+        <h1>Editar Estadio</h1>
     </header>
     <div class="container">
         <?php
 
         $resultado = $mysqli->query($sql);
-        if($fila = $resultado->fetch_assoc()) {
+        while ($fila = $resultado->fetch_assoc()) {
             $nombre = $fila["Nombre"];
-            $puntos = $fila["Puntos"];
+            $capacidad = $fila["Capacidad"];
+            $fundado = $fila["Fundado"];
         }
         
         ?>
-        <form method="POST" action="editar2.php">
+        <form method="POST" action="editarest2.php">
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" value="<?php echo $nombre; ?>"><br>
+
+            <label for="nombre">Capacidad:</label>
+            <input type="number" name="capacidad" value="<?php echo $capacidad; ?>"min="0"><br>
             
-            <label for="puntos">Puntos:</label>
-            <input type="text" name="puntos" value="<?php echo $puntos; ?>"><br>
-            <input type="hidden" name="id_equipo" value="<?php echo $id_equipo; ?>">
+            <label for="puntos">Año de Fundacion:</label>
+            <input type="text" name="fundado" require value="<?php echo $fundado; ?>"><br>
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
             <input type="submit" value="Actualizar" name="Añadir" class="btn btn-primary"> <a href="index.php" class="btn btn-secondary">Volver a la clasificación</a>
         </form>
         

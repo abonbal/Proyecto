@@ -112,6 +112,7 @@
                         <td>
                             <a href="eliminarest.php?id=<?php echo $fila['id']; ?>" class="btn btn-danger">Eliminar</a>
                         </td>
+                        <td><a href="editarest1.php?id=<?php echo $fila['id']?>" class="btn btn-warning">Editar estadio</a></td>
                     </tr>
                 <?php 
                 }
