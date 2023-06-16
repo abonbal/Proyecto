@@ -33,7 +33,7 @@
 				$resultado4 = $mysqli->query($sql4);
 		?>
 		<br>
-		<p class="alert alert-primary" role="alert">Registro eliminado</p>
+		<p class="alert alert-warning" role="alert">Registro eliminado</p>
 		<br>
 		<a href="index.php" class="btn btn-primary">Regresar</a>
 

@@ -64,7 +64,7 @@
             </div>
             <div class="form-group">
                 <label for="numero">Número:</label>
-                <input type="number" name="numero" class="form-control" required>
+                <input type="number" name="numero" class="form-control" required min="0">
             </div>
             <input type="hidden" name="id_equipo" value="<?php echo $id_equipo; ?>">
             <input type="submit" value="Añadir" name="Añadir" class="btn btn-primary">

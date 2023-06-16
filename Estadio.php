@@ -109,9 +109,6 @@
                         <td><?php echo $fila['Nombre']; ?></td>
                         <td><?php echo $fila['Capacidad']; ?></td>
                         <td><?php echo $fila['Fundado']; ?></td>
-                        <td>
-                            <a href="eliminarest.php?id=<?php echo $fila['id']; ?>" class="btn btn-danger">Eliminar</a>
-                        </td>
                         <td><a href="editarest1.php?id=<?php echo $fila['id']?>" class="btn btn-warning">Editar estadio</a></td>
                     </tr>
                 <?php 
@@ -120,7 +117,6 @@
             </tbody>
         </table>
         <a href="index.php" class="btn btn-primary">Volver a la clasificación</a>
-        <a href="añadirest1.php?id_equipo=<?php echo $id_equipo; ?>" class="btn btn-success">Añadir estadio</a>
     </div>
 
 </body>

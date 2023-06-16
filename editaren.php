@@ -77,7 +77,7 @@
             <input type="text" name="nombre" value="<?php echo $nombre; ?>"><br>
             
             <label for="puntos">Temporadas:</label>
-            <input type="number" name="temporadas" value="<?php echo $temporadas; ?>"min="0"><br>
+            <input type="number" name="temporadas" value="<?php echo $temporadas; ?>" required min="0"><br>
             <input type="hidden" name="id_equipo" value="<?php echo $id_equipo; ?>">
             <input type="submit" value="Actualizar" name="Añadir" class="btn btn-primary"> <a href="index.php" class="btn btn-secondary">Volver a la clasificación</a>
         </form>

@@ -79,9 +79,6 @@
                     <tr>
                         <td><?php echo $fila['Nombre']; ?></td>
                         <td><?php echo $fila['Temporadas']; ?></td>
-                        <td>
-                            <a href="eliminaren.php?id=<?php echo $fila['id']; ?>" class="btn btn-danger">Eliminar</a>
-                        </td>
                         <td><a href="editaren.php?id=<?php echo $fila['id']?>" class="btn btn-warning">Editar entrenador</a></td>
                     </tr>
                     
@@ -91,7 +88,7 @@
             </tbody>
         </table>
         <a href="index.php" class="btn btn-primary">Volver a la clasificación</a>
-        <a href="añadiren1.php?id_equipo=<?php echo $id_equipo; ?>" class="btn btn-success">Añadir entrenador</a>
+        
     </div>
 </body>
 </html>

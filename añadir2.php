@@ -47,7 +47,7 @@
 
         if ($mysqli->query($sql)){
             echo '
-		<p class="alert alert-primary" role="alert">Jugador añadido</p>
+		<p class="alert alert-primary" role="alert">Equipo añadido</p>
 		<br>
 		<a href="index.php" class="btn btn-primary">Regresar</a>';
         } else {

@@ -77,7 +77,7 @@
             <input type="text" name="nombre" value="<?php echo $nombre; ?>"><br>
             
             <label for="puntos">Puntos:</label>
-            <input type="text" name="puntos" value="<?php echo $puntos; ?>"><br>
+            <input type="number" name="puntos" value="<?php echo $puntos; ?>" required min='0'><br>
             <input type="hidden" name="id_equipo" value="<?php echo $id_equipo; ?>">
             <input type="submit" value="Actualizar" name="Añadir" class="btn btn-primary"> <a href="index.php" class="btn btn-secondary">Volver a la clasificación</a>
         </form>

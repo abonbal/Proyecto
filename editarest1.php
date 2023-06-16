@@ -81,7 +81,7 @@
             <input type="number" name="capacidad" value="<?php echo $capacidad; ?>"min="0"><br>
             
             <label for="puntos">Año de Fundacion:</label>
-            <input type="text" name="fundado" require value="<?php echo $fundado; ?>"><br>
+            <input type="date" name="fundado" require value="<?php echo $fundado; ?>"><br>
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <input type="submit" value="Actualizar" name="Añadir" class="btn btn-primary"> <a href="index.php" class="btn btn-secondary">Volver a la clasificación</a>
         </form>
