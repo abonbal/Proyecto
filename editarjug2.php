@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Editar Estadio</title>
+    <title>Editar Jugador</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
         body {
