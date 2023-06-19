@@ -79,6 +79,7 @@
                     <tr>
                         <td><?php echo $fila['Nombre']; ?></td>
                         <td><?php echo $fila['Numero']; ?></td>
+                        <td><a href="editarjug.php?id=<?php echo $fila['id']?>" class="btn btn-warning">Editar jugador</a></td>
                         <td>
                             <a href="eliminarjug.php?id='<?php echo $fila['id'];?>'" class="btn btn-danger">Eliminar Jugador</a>
                         </td>

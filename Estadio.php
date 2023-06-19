@@ -6,8 +6,6 @@
   $id_equipo = $_GET["id"];
 
   $sql = "SELECT * FROM estadios WHERE id_equipo = $id_equipo";
-
-
   $resultado = $mysqli->query($sql);
 ?>
 
@@ -84,6 +82,14 @@
         .btn-danger:focus, .btn-danger.focus {
             box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
         }
+
+        .btn-container {
+            display: flex;
+        }
+
+        .btn-container .btn {
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
@@ -103,22 +109,40 @@
             </thead>
             <tbody>
                 <?php 
-                while ($fila = $resultado->fetch_assoc()){
+                if ($resultado->num_rows > 0) {
+                    while ($fila = $resultado->fetch_assoc()){
                 ?>
                     <tr>
                         <td><?php echo $fila['Nombre']; ?></td>
                         <td><?php echo $fila['Capacidad']; ?></td>
                         <td><?php echo $fila['Fundado']; ?></td>
-                        <td><a href="editarest1.php?id=<?php echo $fila['id']?>" class="btn btn-warning">Editar estadio</a></td>
+                        <td>
+                            <div class="btn-container">
+                                <a href="editarest1.php?id=<?php echo $fila['id']?>" class="btn btn-warning">Editar estadio</a>
+                            </div>
+                        </td>
                     </tr>
                 <?php 
-                }
-                ?>
+                    }
+                } else {
+                   // No hay estadio registrado para este equipo
+                   ?>
+                   <tr>
+                       <td colspan="3">No hay estadio registrado.</td>
+                   </tr>
+                   <tr>
+                       <td colspan="2"></td>
+                       <td><a href="añadirest1.php?id=<?php echo $id_equipo;?>" class="btn btn-success">Añadir estadio</a></td>
+                   </tr>
+                   <?php
+               }
+               ?>
             </tbody>
         </table>
         <a href="index.php" class="btn btn-primary">Volver a la clasificación</a>
     </div>
 
 </body>
-</
+</html>
+
 

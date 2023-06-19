@@ -1,13 +1,13 @@
 <?php
-  // Estableciendo la conexión
-  require 'conexion.php';
+// Estableciendo la conexión
+require 'conexion.php';
 
-  // Obtener el ID del equipo seleccionado desde el parámetro de la URL
-  $id_equipo = $_GET["id"];
+// Obtener el ID del equipo seleccionado desde el parámetro de la URL
+$id_equipo = $_GET["id"];
 
-   $sql = "SELECT * FROM entrenador WHERE id_equipo = $id_equipo";
+$sql = "SELECT * FROM entrenador WHERE id_equipo = $id_equipo";
 
-   $resultado = $mysqli->query($sql);
+$resultado = $mysqli->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -79,9 +79,20 @@
                     <tr>
                         <td><?php echo $fila['Nombre']; ?></td>
                         <td><?php echo $fila['Temporadas']; ?></td>
-                        <td><a href="editaren.php?id=<?php echo $fila['id']?>" class="btn btn-warning">Editar entrenador</a></td>
+                        <td><a href="editaren.php?id=<?php echo $fila['id_equipo']?>" class="btn btn-warning">Editar entrenador</a></td>
                     </tr>
                     
+                    <?php
+                } else {
+                    // No hay entrenador registrado para este equipo
+                    ?>
+                    <tr>
+                        <td colspan="3">No hay entrenador registrado.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td><a href="añadiren.php?id=<?php echo $id_equipo;?>" class="btn btn-success">Añadir entrenador</a></td>
+                    </tr>
                     <?php
                 }
                 ?>
@@ -92,4 +103,5 @@
     </div>
 </body>
 </html>
+
 

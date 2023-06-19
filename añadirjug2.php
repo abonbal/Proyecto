@@ -13,7 +13,7 @@ if (isset($_POST["Añadir"])) {
     $resultado=$mysqli->query($sql);
     if($fila = $resultado->fetch_assoc()) {
         echo '
-		<p class="alert alert-primary" role="alert">Dorsal repetido</p>
+		<p class="alert alert-warning" role="alert">Dorsal repetido</p>
 		<br>
 		<a href="index.php" class="btn btn-primary">Regresar</a>';
     } else {
@@ -21,7 +21,7 @@ if (isset($_POST["Añadir"])) {
     $resultado2=$mysqli->query($sql2);
     if($fila2 = $resultado2->fetch_assoc()) {
         echo '
-		<p class="alert alert-primary" role="alert">Nombre repetido</p>
+		<p class="alert alert-warning" role="alert">Nombre repetido</p>
 		<br>
 		<a href="index.php" class="btn btn-primary">Regresar</a>';
     } else {
